@@ -1,0 +1,32 @@
+arr_word=()
+common_index=-1
+arr_frequency=()
+
+function store_word(){
+    word=$1
+    if [[ "${arr_word[@]/$word/}" != "${arr_word[@]}" ]];then
+        for index in $(seq 0 $common_index);do
+            if [ "${arr_word[$index]}" == "$word" ];then
+                break
+            fi
+        done
+        old_fre=${arr_frequency[$index]}
+        arr_frequency[$index]=$((old_fre+1))
+    else
+        common_index=$((common_index+1))
+        arr_word[$common_index]=$word
+        arr_frequency[$common_index]=1
+    fi
+}
+
+while read line;
+do
+    for word in $line;
+    do
+        store_word $word
+    done
+done<file.txt
+
+for index in $(seq 0 $common_index);do
+    echo ${arr_word[$index]}  ${arr_frequency[$index]}
+done|sort -k  2 -r
