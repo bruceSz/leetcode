@@ -12,7 +12,7 @@ cmake_minimum_required(VERSION 2.8.2)
  )
 
  SET(tree_path_sum_SOURCE
-   tree_path_sum.cc
+   tree_path_sum.cc tree_path_sum_arr.cc check_mirror_bt.cc
  )
 
  add_executable(rev ${reverse_SOURCE})

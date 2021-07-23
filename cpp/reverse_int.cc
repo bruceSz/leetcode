@@ -1,10 +1,11 @@
 #include <iostream>
 class Solution {
- public:
+public:
   int reverse_int(int a) {
     int ret = 0;
     int sign = 1;
-    if (a < 0) sign = -1;
+    if (a < 0)
+      sign = -1;
 
     while (a > 0) {
       ret = ret * 10 + a % 10;
