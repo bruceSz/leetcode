@@ -1,4 +1,4 @@
-#include "common.h"
+#include "../common.h"
 bool hasPathSum(TreeNode *root, int targetSum) {
   if (!root)
     return false;

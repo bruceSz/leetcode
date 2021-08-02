@@ -1,5 +1,8 @@
-#include "common.h"
+#include "../common.h"
 //#include <math.h>
+
+
+#define bin_search b_search
 
 int guess(int x, long n) {
   cout << "guess " << x << " as sqrt of " << n << std::endl;
@@ -44,4 +47,27 @@ float find_sqrt(int n) {
 int main() {
   auto ret = find_sqrt(13);
   cout << "sqrt of 13: " << ret << std::endl;
+
+
+  cout << "binary search:"  <<std::endl;
+  int arr[] = {1,4,56,77,79};
+
+
+  for(auto i : arr) {
+    
+    auto f = bin_search(i,arr, 5);
+    cout << "find target: " << f << std::endl;
+  }
+
+  auto f= bin_search(11,arr,5);
+  cout << "find target: " << f << std::endl;
+
+  /*auto f = bin_search(77,arr, 5);
+  cout << "find target: " << f << std::endl;
+    f = bin_search(4,arr, 5);
+  cout << "find target: " << f << std::endl;
+  f = bin_search(56,arr, 5);
+  cout << "find target: " << f << std::endl;
+  f = bin_search(79,arr, 5);
+  cout << "find target: " << f << std::endl;*/
 }
